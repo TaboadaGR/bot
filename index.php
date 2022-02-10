@@ -6,7 +6,7 @@ $update = json_decode(file_get_contents("php://input"), TRUE)
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 
-if (strpos($message, "/weather") === 0{
+if ($message=="/weather"){
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=hola";
     file_get_contents($url);
 }
