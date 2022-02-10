@@ -6,13 +6,13 @@ $update = json_decode(file_get_contents("php://input"), TRUE);
 
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
-$hola="hola";
+$hola="¡Qué buen día hace!";
 
-//if ($message[0]=="/weather"){
+if ($message=="/weather"){
     echo "hola dentro";
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=".urlencode($hola);
     file_get_contents($url);
-//}
+}
 
 /*if (strpos($message, "/weather") === 0) {
     $location = substr($message, 9);
