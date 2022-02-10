@@ -1,6 +1,6 @@
 <?php
 
-$path = "https://api.telegram.org/bot5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
+/*$path = "https://api.telegram.org/bot5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
 $update = json_decode(file_get_contents("php://input"), TRUE)
 
 $chatId = $update["message"]["chat"]["id"];
@@ -22,4 +22,6 @@ echo "hola fuera";
     }*/
 
 
+
+    echo "hola";
 ?>
