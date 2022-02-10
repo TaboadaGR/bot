@@ -7,7 +7,7 @@ $update = json_decode(file_get_contents("php://input"), TRUE);
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 $hola="¡Qué buen día hace!";
-
+echo "hola dentro";
 if ($message=="/weather"){
     echo "hola dentro";
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=".urlencode($hola);
