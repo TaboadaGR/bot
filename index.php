@@ -13,6 +13,8 @@ if ($message=="/weather"){
     file_get_contents($url);
 }
 
+echo "hola fuera";
+
 /*if (strpos($message, "/weather") === 0) {
     $location = substr($message, 9);
     $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&appid=mytoken"), TRUE)["weather"][0]["main"];
