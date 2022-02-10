@@ -18,7 +18,7 @@ switch($message){
     default: echo"eeeem no se";
 }
 // if ($message=="/weather"){
-    function saludo(){
+    function saludo($path,$chatId,$hola){
 
     echo "hola dentro";
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=".urlencode($hola);
