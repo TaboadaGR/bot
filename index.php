@@ -8,7 +8,7 @@ $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 $hola="¡Qué buen día hace!";
 
-if ($message[0]=="/weather"){
+if ($message=="/weather"){
     echo "hola dentro";
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=".urlencode($hola);
     file_get_contents($url);
