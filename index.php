@@ -7,11 +7,11 @@ $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 $hola="hola";
 
-if ($message=="/weather"){
+//if ($message[0]=="/weather"){
     echo "hola";
     $url=$path."/sendMessage?chat_id=".$chatId."&parse_mode=HTML&text=".urlencode($hola);
     file_get_contents($url);
-}
+//}
 
 echo "hola fuera";
 
