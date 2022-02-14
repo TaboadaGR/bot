@@ -5,8 +5,8 @@ $path = "https://api.telegram.org/bot".$apikeytelegram;
 $update = json_decode(file_get_contents("php://input"),TRUE);
 
 
-// $chatId = $update["message"]["chat"]["id"];
-// $message = $update["message"]["text"];
+ $chatId = $update["message"]["chat"]["id"];
+ $message = $update["message"]["text"];
 
 // if (strpos($message, "/weather") === 0) {
 // $location = substr($message, 9);
