@@ -11,27 +11,23 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
  if (strpos($message, "/weather") === 0) {
     $location = substr($message, 9);
     $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&appid=cb5bdb19e2f810101fb82c512a2ab64a"), TRUE)["weather"][0]["main"];
-    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Here's the weather in ".$location.": ". $weather);
+    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location." está: ". $weather);
 }
 
-if(strpos($message, "/covid") === 0){
+if(strpos($message, "/car") === 0){
     $client = new http\Client;
-$request = new http\Client\Request;
-
-$request->setRequestUrl('https://covid-19-data.p.rapidapi.com/country/code');
-$request->setRequestMethod('GET');
-$request->setQuery(new http\QueryString([
-	'code' => 'it'
-]));
-
-$request->setHeaders([
-	'x-rapidapi-host' => 'covid-19-data.p.rapidapi.com',
-	'x-rapidapi-key' => '6d433c5dcbmsh8f04c3c9f812e94p1f26d6jsn166e00f9d911'
-]);
-
-$client->enqueue($request)->send();
-$response = $client->getResponse();
-
-echo $response->getBody();
+    $request = new http\Client\Request;
+    
+    $request->setRequestUrl('https://car-data.p.rapidapi.com/cars/types');
+    $request->setRequestMethod('GET');
+    $request->setHeaders([
+        'x-rapidapi-host' => 'car-data.p.rapidapi.com',
+        'x-rapidapi-key' => '6d433c5dcbmsh8f04c3c9f812e94p1f26d6jsn166e00f9d911'
+    ]);
+    
+    $client->enqueue($request)->send();
+    $response = $client->getResponse();
+    
+    echo $response->getBody();
 }
 ?>
