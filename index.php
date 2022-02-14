@@ -9,7 +9,7 @@ $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 $peticion = $update["text"];
 
-echo $peticion;
+// echo $peticion;
 
 // switch($peticion){
 //     case"/country":
