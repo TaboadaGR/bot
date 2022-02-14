@@ -1,15 +1,15 @@
 <?php
 
- $path = "https://api.telegram.org/bot"
-// $apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
-// $update = json_decode(file_get_contents("php://input"), TRUE);
-// $APIKEY = "6d433c5dcbmsh8f04c3c9f812e94p1f26d6jsn166e00f9d911";
+$path = "https://api.telegram.org/bot"
+$apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
+$update = json_decode(file_get_contents("php://input"), TRUE);
+$APIKEY = "6d433c5dcbmsh8f04c3c9f812e94p1f26d6jsn166e00f9d911";
 
-// $chatId = $update["message"]["chat"]["id"];
-// $message = $update["message"]["text"];
-// $peticion = $update["text"];
+$chatId = $update["message"]["chat"]["id"];
+$message = $update["message"]["text"];
+$peticion = $update["text"];
 
-// echo "hola dentro";
+echo "hola dentro";
 
 // switch($peticion){
 //     case"/country":
