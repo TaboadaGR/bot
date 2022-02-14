@@ -1,7 +1,7 @@
 <?php
 
-$path = "https://api.telegram.org/bot"
 $apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
+$path = "https://api.telegram.org/bot"$apikeytelegram;
 // $update = json_decode(file_get_contents("php://input"),TRUE);
 
 
