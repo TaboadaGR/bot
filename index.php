@@ -14,7 +14,7 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Here's the weather in ".$location.": ". $weather);
 }
 
-if(strpos($message, "/covid") === 0){
+if(strpos($message, "/covid") === 1){
     $client = new http\Client;
 $request = new http\Client\Request;
 
