@@ -11,16 +11,17 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
  $reply = $update["message"]["reply_to_message"]["text"];
 
  if(isset($reply)){
-    function sendMessage($chatId, $message, $repl){
 
-        if($repl == TRUE) {
-           $reply_mark = array(array('force_reply' => TRUE);
-           $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($response);
-        }
-        else $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
+    // function sendMessage($chatId, $message, $repl){
+
+    //     if($repl == TRUE) {
+    //        $reply_mark = array(array('force_reply' => TRUE);
+    //        $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($response);
+    //     }
+    //     else $url = $GLOBALS[website].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($response);
    
-        file_get_contents($url);
-    }
+    //     file_get_contents($url);
+    // }
    
    
     if (strpos($message, "/weather") === 0) {
