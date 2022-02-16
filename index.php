@@ -30,4 +30,11 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
     $weather = $weather["weather"][0]["main"];
     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location." está: ". $weather);
 }
+
+if (strpos($message, "/covid") == 0) {
+    //$location = substr($message, 9);
+    $weather = json_decode(file_get_contents("https://api.covidtracking.com/v1/us/daily.json"), TRUE);
+    $weather = $weather["weather"][0]["main"];
+    file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location." está: ". $weather);
+}
 ?>
