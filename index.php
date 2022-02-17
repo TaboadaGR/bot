@@ -25,36 +25,36 @@ $update = json_decode($update,TRUE);
     file_get_contents($url);
 }
 
-//   if(empty($reply)){
+  if(empty($reply)){
 
-//     switch($message){
-//         case "Hola":
-//              $response = "Hola que tal?";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
+    switch($message){
+        case "Hola":
+             $response = "Hola que tal?";
+            sendMessage($chatId,$response,FALSE);
+            break;
 
-//         case "Tiempo":
-//             $response = "¿De qué municipio quieres consultar?";
-//             sendMessage($chatId,$response,TRUE);
-//             break;
+        case "Tiempo":
+            $response = "¿De qué municipio quieres consultar?";
+            sendMessage($chatId,$response,TRUE);
+            break;
 
-//         case default:
-//             $response = "No te he entendido";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
+        case default:
+            $response = "No te he entendido";
+            sendMessage($chatId,$response,FALSE);
+            break;
 
-//   }
-//   else {
-//       switch($replya[0]){
-//           case "¿Qué":
-//             getTiempo($chatId,$lugar);
-//       }
-//   }
+  }
+  else {
+      switch($replya[0]){
+          case "¿Qué":
+            getTiempo($chatId,$lugar);
+      }
+  }
 
-//   function getTiempo($chatId,$lugar){
+  function getTiempo($chatId,$lugar){
 
-//     sendMessage($chatId,$lugar,FALSE);
-//   }
+    sendMessage($chatId,$lugar,FALSE);
+  }
    
 // //     if (strpos($message, "/tiempo") === 0) {
 // //         // $reply_mark = array(array('force_reply' => TRUE);
