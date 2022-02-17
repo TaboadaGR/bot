@@ -10,20 +10,20 @@ $update = json_decode($update,TRUE);
  $chatId = $update["message"]["chat"]["id"];
  $message = $update["message"]["text"];
 
-//   $reply = $update["message"]["reply_to_message"]["text"];
-//   $replya = explode(" ",$reply);
+  $reply = $update["message"]["reply_to_message"]["text"];
+  $replya = explode(" ",$reply);
 
 
-// //   function sendMessage($chatId, $message, $repl){
+  function sendMessage($chatId, $message, $repl){
 
-// //     if($repl == TRUE) {
-// //        $reply_mark = array(array('force_reply' => TRUE);
-// //        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
-// //     }
-// //     else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+    if($repl == TRUE) {
+       $reply_mark = array(array('force_reply' => TRUE);
+       $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+    }
+    else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
 
-// //     file_get_contents($url);
-//}
+    file_get_contents($url);
+}
 
 //   if(empty($reply)){
 
