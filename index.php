@@ -25,9 +25,9 @@ $replya = explode(" ",$reply);
     //    $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     // }
     //else 
-    $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+//     $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
 
-    file_get_contents($url);
+//     file_get_contents($url);
 }
 
   //if(empty($reply)){
