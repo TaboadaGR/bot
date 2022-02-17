@@ -10,8 +10,8 @@ $update = json_decode($update,TRUE);
  $chatId = $update["message"]["chat"]["id"];
  $message = $update["message"]["text"];
 
-  $reply = $update["message"]["reply_to_message"]["text"];
-  $replya = explode(" ",$reply);
+//$reply = $update["message"]["reply_to_message"]["text"];
+//$replya = explode(" ",$reply);
 
 
   function sendMessage($chatId, $message, $repl){
@@ -25,7 +25,7 @@ $update = json_decode($update,TRUE);
     file_get_contents($url);
 }
 
-  if(empty($reply)){
+  //if(empty($reply)){
 
     switch($message){
         case "Hola":
@@ -44,25 +44,25 @@ $update = json_decode($update,TRUE);
             break;
 
   }
-}
-  else {
-      switch($replya[0]){
-        case "¿Qué":
-            getTiempo($chatId,$lugar);
-            break;
+//}
+//   else {
+//       switch($replya[0]){
+//         case "¿Qué":
+//             getTiempo($chatId,$lugar);
+//             break;
         
-        default:
-            $response = "No te he entendido (reply)";
-            sendMessage($chatId,$response,FALSE);
-            break;
+//         default:
+//             $response = "No te he entendido (reply)";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
             
-      }
-  }
+//       }
+//   }
 
-  function getTiempo($chatId,$lugar){
+//   function getTiempo($chatId,$lugar){
 
-    sendMessage($chatId,$lugar,FALSE);
-  }
+//     sendMessage($chatId,$lugar,FALSE);
+//   }
    
 // //     if (strpos($message, "/tiempo") === 0) {
 // //         // $reply_mark = array(array('force_reply' => TRUE);
