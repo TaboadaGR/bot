@@ -24,11 +24,11 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
    
 //  }
    
-    if (strpos($message, "/weather") === 0) {
+    if (strpos($message, "/tiempo") === 0) {
         // $reply_mark = array(array('force_reply' => TRUE);
        $location = substr($message, 9);
-       $weather = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=".$location."&appid=cb5bdb19e2f810101fb82c512a2ab64a"), TRUE)["weather"][0]["main"];
-       file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=Here's the weather in ".$location.": ". $weather);
+       $weather = json_decode(file_get_contents("https://www.el-tiempo.net/api/json/v2/home".$location."&appid=cb5bdb19e2f810101fb82c512a2ab64a"), TRUE)["weather"][0]["main"];
+       file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location."es: ". $weather);
    }
    else {
     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=no te entiendo ");
