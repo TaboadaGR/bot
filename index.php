@@ -25,48 +25,48 @@ $update = json_decode($update,TRUE);
 // //     file_get_contents($url);
 }
 
-  if(empty($reply)){
+//   if(empty($reply)){
 
-    switch($message){
-        case "Hola":
-             $response = "Hola que tal?";
-            sendMessage($chatId,$response,FALSE);
-            break;
+//     switch($message){
+//         case "Hola":
+//              $response = "Hola que tal?";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
 
-        case "Tiempo":
-            $response = "¿De qué municipio quieres consultar?";
-            sendMessage($chatId,$response,TRUE);
-            break;
+//         case "Tiempo":
+//             $response = "¿De qué municipio quieres consultar?";
+//             sendMessage($chatId,$response,TRUE);
+//             break;
 
-        case default:
-            $response = "No te he entendido";
-            sendMessage($chatId,$response,FALSE);
-            break;
+//         case default:
+//             $response = "No te he entendido";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
 
-  }
-  else {
-      switch($replya[0]){
-          case "¿Qué":
-            getTiempo($chatId,$lugar);
-      }
-  }
+//   }
+//   else {
+//       switch($replya[0]){
+//           case "¿Qué":
+//             getTiempo($chatId,$lugar);
+//       }
+//   }
 
-  function getTiempo($chatId,$lugar){
+//   function getTiempo($chatId,$lugar){
 
-    sendMessage($chatId,$lugar,FALSE);
-  }
+//     sendMessage($chatId,$lugar,FALSE);
+//   }
    
-//     if (strpos($message, "/tiempo") === 0) {
-//         // $reply_mark = array(array('force_reply' => TRUE);
-//        $location = substr($message, 9);
-//        $weather = json_decode(file_get_contents("https://www.el-tiempo.net/api/json/v2/home".$location."&appid=cb5bdb19e2f810101fb82c512a2ab64a"), TRUE)
-//          $weather= ["ciudades"][1]["temperatures"]["max"];
-//        sendMessage($chatId,$weather,FALSE);
-// NOOOOOOOOOOOOOO file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location."es: ". $weather);
-//    }
-//    else {
-//     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=no te entiendo ");
-//    }
+// //     if (strpos($message, "/tiempo") === 0) {
+// //         // $reply_mark = array(array('force_reply' => TRUE);
+// //        $location = substr($message, 9);
+// //        $weather = json_decode(file_get_contents("https://www.el-tiempo.net/api/json/v2/home".$location."&appid=cb5bdb19e2f810101fb82c512a2ab64a"), TRUE)
+// //          $weather= ["ciudades"][1]["temperatures"]["max"];
+// //        sendMessage($chatId,$weather,FALSE);
+// // NOOOOOOOOOOOOOO file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=El tiempo en ".$location."es: ". $weather);
+// //    }
+// //    else {
+// //     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=no te entiendo ");
+// //    }
 
  
  
