@@ -1,10 +1,10 @@
 <?php
 
-echo "hola";
+
 $apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
 $path = "https://api.telegram.org/bot".$apikeytelegram;
-$update = file_get_contents("php://input");
-$update = json_decode($update,TRUE);
+$file = file_get_contents("php://input");
+$update = json_decode($file,TRUE);
 
 
  $chatId = $update["message"]["chat"]["id"];
