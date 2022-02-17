@@ -1,59 +1,59 @@
 <?php
 
 echo "hola";
-// $apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
-// $path = "https://api.telegram.org/bot".$apikeytelegram;
-// $update = json_decode(file_get_contents("php://input"),TRUE);
+$apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
+$path = "https://api.telegram.org/bot".$apikeytelegram;
+$update = json_decode(file_get_contents("php://input"),TRUE);
 
 
-//  $chatId = $update["message"]["chat"]["id"];
-//  $message = $update["message"]["text"];
+ $chatId = $update["message"]["chat"]["id"];
+ $message = $update["message"]["text"];
 
-//   $reply = $update["message"]["reply_to_message"]["text"];
-//   $replya = explode(" ",$reply);
+  //$reply = $update["message"]["reply_to_message"]["text"];
+  //$replya = explode(" ",$reply);
 
 
-//   function sendMessage($chatId, $message, $repl){
+  function sendMessage($chatId, $message, $repl){
 
-//     if($repl == TRUE) {
-//        $reply_mark = array(array('force_reply' => TRUE);
-//        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
-//     }
-//     else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+    if($repl == TRUE) {
+       $reply_mark = array(array('force_reply' => TRUE);
+       $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+    }
+    else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
 
-//     file_get_contents($url);
-// }
+    file_get_contents($url);
+}
 
-//   if(empty($reply)){
+  if(empty($reply)){
 
-//     switch($message){
-//         case "Hola":
-//              $response = "Hola que tal?";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
+    switch($message){
+        case "Hola":
+             $response = "Hola que tal?";
+            sendMessage($chatId,$response,FALSE);
+            break;
 
-//         case "Tiempo":
-//             $response = "¿De qué municipio quieres consultar?";
-//             sendMessage($chatId,$response,TRUE);
-//             break;
+        case "Tiempo":
+            $response = "¿De qué municipio quieres consultar?";
+            sendMessage($chatId,$response,TRUE);
+            break;
 
-//         case default:
-//             $response = "No te he entendido";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
+        case default:
+            $response = "No te he entendido";
+            sendMessage($chatId,$response,FALSE);
+            break;
 
-//   }
-//   else {
-//       switch($replya[0]){
-//           case "¿Qué":
-//             getTiempo($chatId,$lugar);
-//       }
-//   }
+  }
+  else {
+      switch($replya[0]){
+          case "¿Qué":
+            getTiempo($chatId,$lugar);
+      }
+  }
 
-//   function getTiempo($chatId,$lugar){
+  function getTiempo($chatId,$lugar){
 
-//     sendMessage($chatId,$lugar,FALSE);
-//   }
+    sendMessage($chatId,$lugar,FALSE);
+  }
    
 //     if (strpos($message, "/tiempo") === 0) {
 //         // $reply_mark = array(array('force_reply' => TRUE);
