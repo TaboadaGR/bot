@@ -23,7 +23,7 @@ $update = json_decode($update,TRUE);
 // //     else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
 
 // //     file_get_contents($url);
-}
+//}
 
 //   if(empty($reply)){
 
