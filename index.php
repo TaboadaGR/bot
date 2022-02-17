@@ -7,12 +7,15 @@ $file = file_get_contents("php://input");
 $update = json_decode($file,TRUE);
 
 
- $chatId = $update["message"]["chat"]["id"];
- $message = $update["message"]["text"];
- $command = explode(" ",$message);
+$chatId = $update["message"]["chat"]["id"];
+$message = $update["message"]["text"];
+$command = explode(" ",$message);
 
-//$reply = $update["message"]["reply_to_message"]["text"];
-//$replya = explode(" ",$reply);
+
+/* Hasta aquí bien*/
+
+$reply = $update["message"]["reply_to_message"]["text"];
+$replya = explode(" ",$reply);
 
 
   function sendMessage($chatId, $message){
