@@ -44,10 +44,12 @@ $update = json_decode($update,TRUE);
             break;
 
   }
+}
   else {
       switch($replya[0]){
           case "¿Qué":
             getTiempo($chatId,$lugar);
+            break;
       }
   }
 
