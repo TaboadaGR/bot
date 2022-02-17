@@ -22,7 +22,7 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
    
     //     file_get_contents($url);
    
-
+//  }
    
     if (strpos($message, "/weather") === 0) {
         // $reply_mark = array(array('force_reply' => TRUE);
@@ -33,7 +33,7 @@ $update = json_decode(file_get_contents("php://input"),TRUE);
    else {
     file_get_contents($path."/sendmessage?chat_id=".$chatId."&text=no te entiendo ");
    }
-//  }
+
  
  
 ?>
