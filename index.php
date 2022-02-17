@@ -9,38 +9,40 @@ $update = json_decode($update,TRUE);
 
  $chatId = $update["message"]["chat"]["id"];
  $message = $update["message"]["text"];
+ $command = explode(" ",$message);
 
 //$reply = $update["message"]["reply_to_message"]["text"];
 //$replya = explode(" ",$reply);
 
 
-  function sendMessage($chatId, $message, $repl){
+  function sendMessage($chatId, $message){
 
-    if($repl == TRUE) {
-       $reply_mark = array('force_reply' => TRUE);
-       $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
-    }
-    else $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+    // if($repl == TRUE) {
+    //    $reply_mark = array('force_reply' => TRUE);
+    //    $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+    // }
+    //else 
+    $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
 
     file_get_contents($url);
 }
 
   //if(empty($reply)){
 
-    switch($message){
+    switch($command[0]){
         case "Hola":
             $response = "Hola que tal?";
-            sendMessage($chatId,$response,FALSE);
+            sendMessage($chatId,$response);
             break;
 
         case "/tiempo":
             $response = "¿De qué municipio quieres consultar?";
-            sendMessage($chatId,$response,TRUE);
+            sendMessage($chatId,$response);
             break;
 
         default:
             $response = "No te he entendido";
-            sendMessage($chatId,$response,FALSE);
+            sendMessage($chatId,$response);
             break;
 
   }
