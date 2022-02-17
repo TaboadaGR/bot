@@ -29,16 +29,16 @@ $update = json_decode($update,TRUE);
 
     switch($message){
         case "Hola":
-             $response = "Hola que tal?";
+            $response = "Hola que tal?";
             sendMessage($chatId,$response,FALSE);
             break;
 
-        case "Tiempo":
+        case "/tiempo":
             $response = "¿De qué municipio quieres consultar?";
             sendMessage($chatId,$response,TRUE);
             break;
 
-        case default:
+        default:
             $response = "No te he entendido";
             sendMessage($chatId,$response,FALSE);
             break;
@@ -47,9 +47,15 @@ $update = json_decode($update,TRUE);
 }
   else {
       switch($replya[0]){
-          case "¿Qué":
+        case "¿Qué":
             getTiempo($chatId,$lugar);
             break;
+        
+        default:
+            $response = "No te he entendido (reply)";
+            sendMessage($chatId,$response,FALSE);
+            break;
+            
       }
   }
 
