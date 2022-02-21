@@ -87,12 +87,11 @@ else {
       $arraytiempo = json_decode($json);
       $provincia;
       $tamanoarray=1000;
-      for ($i=0;i<$tamanoarray;i++){
+      for ($i=0;i<=$tamanoarray;i++){
         if ($arraytiempo[$i]["NOMBRE"]==$lugar){
             $provincia = $arraytiempo[$i]["CODPROV"];
         }    
-      } 
-      echo($provincia);
+      }
     $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
     file_get_contents($url);
 
