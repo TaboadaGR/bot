@@ -44,15 +44,25 @@ if(empty($reply)){
             sendMessage($chatId,$response,FALSE);
             break;
 
+        case "hola":
+            $response = "Hola que tal?";
+            sendMessage($chatId,$response,FALSE);
+            break;
+
+        case "bien":
+            $response = "me alegro ;) En que te puedo ayudar:";
+            sendMessage($chatId,$response,FALSE);
+            break;    
+    
         case "/tiempo":
             $response = "¿De qué municipio quieres consultar?";
             sendMessage($chatId,$response,TRUE);
             break;
 
-        default:
-            $response = "No te he entendido";
-            sendMessage($chatId,$response,FALSE);
-            break;
+            default:
+                $response = "No te he entendido";
+                sendMessage($chatId,$response,FALSE);
+                break;
 
   }
 }
@@ -71,7 +81,7 @@ else {
 }
 
   function getTiempo($chatId,$lugar){
-    $url = 'https://www.el-tiempo.net/api/json/v2/municipios/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text=[nombre_provincia]'.urlencode($message);
+    $url = 'https://www.el-tiempo.net/api/json/v2/municipios/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
     file_get_contents($url);
 
     sendMessage($chatId,$lugar,FALSE);
