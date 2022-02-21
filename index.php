@@ -17,10 +17,9 @@ $reply = $update["message"]["reply_to_message"]["text"];
 $replya = explode(" ",$reply);
 
 
-sendMessage($chatId,$message, FALSE);
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $message, $repl){
+function sendMessage($chatId, $message){
 
 
     if($repl == TRUE) {
