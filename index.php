@@ -20,19 +20,20 @@ $replya = explode(" ",$reply);
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
 function sendMessage($chatId, $message,$repl){
-    echo "hola holita";
+    
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     }
     else{
+        echo "hola holita";
         $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
     }
 
     file_get_contents($url);
 }
 
-if(!empty($message)){
+if(empty($message)){
     sendMessage($chatId,"Hola",FALSE);
 }
 
