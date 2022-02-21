@@ -81,7 +81,8 @@ else {
 }
 
   function getTiempo($chatId,$lugar){
-      $ubi='https://www.el-tiempo.net/api/json/v2/provincias/'['08'];
+      $tiempo ='https://www.el-tiempo.net/api/json/v2/provincias/';
+      $ubi= $tiempo["CODPROV"];
     $url = 'https://www.el-tiempo.net/api/json/v2/provincias/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($ubi);
     file_get_contents($url);
 
