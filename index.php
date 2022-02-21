@@ -32,7 +32,8 @@ function sendMessage($chatId, $message){
     file_get_contents($url);
 }
 
-  if(empty($reply)){
+  if(!empty($reply)){
+
 //Comprueba con el "switch" que ha introducido el usuario
     switch($command[0]){
         case "Hola":
