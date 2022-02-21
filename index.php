@@ -25,11 +25,11 @@ function sendMessage($chatId,$message,$repl){
     
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
-       $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+       $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
        file_get_contents($url);
     }
     else{
-        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+        $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
         file_get_contents($url);
     }    
 }
