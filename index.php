@@ -23,10 +23,10 @@ function sendMessage($chatId, $message,$repl){
     echo "hola holita";
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
-       $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+       $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     }
     else{
-        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
     }
 
     file_get_contents($url);
