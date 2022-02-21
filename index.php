@@ -9,6 +9,8 @@ $update = json_decode($file,TRUE);
 
 //variables para extraer datos del usuario 
 $chatId = $update["message"]["chat"]["id"];
+echo $chatId;
+echo "/";
 $message = $update["message"]["text"];
 $command = explode(" ",$message);
 
@@ -28,13 +30,13 @@ function sendMessage($chatId, $server, $message,$repl){
     }
     else{
         echo "inicio";
-        echo "/n";
+        echo "/";
         $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
         file_get_contents($url);
         echo $url;
-        echo "/n";
+        echo "/";
         echo $chatId;
-        echo "/n";
+        echo "/";
         echo $message;
         echo "fin";
     }    
