@@ -29,62 +29,54 @@ function sendMessage($chatId, $server, $message,$repl){
        file_get_contents($url);
     }
     else{
-        echo "inicio";
-        echo "/";
         $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
         file_get_contents($url);
-        echo $url;
-        echo "/";
-        echo $chatId;
-        echo "/";
-        echo $message;
-        echo "fin";
     }    
 }
 
-if(!empty($message)){
-    sendMessage($chatId,$path,"Hola",FALSE);
+// if(!empty($message)){
+//     sendMessage($chatId,$path,"Hola",FALSE);
+// }
+
+if(empty($reply)){
+
+//Comprueba con el "switch" que ha introducido el usuario
+    switch($command[0]){
+        case "Hola":
+            $response = "Hola que tal?";
+            sendMessage($chatId,$path,$response,FALSE);
+            break;
+
+        case "/tiempo":
+            $response = "¿De qué municipio quieres consultar?";
+            sendMessage($chatId,$path,$response,TRUE);
+            break;
+
+        default:
+            $response = "No te he entendido";
+            sendMessage($chatId,$path,$response,FALSE);
+            break;
+
+  }
+}
+else {
+    switch($replya[0]){
+        case "¿De":
+            getTiempo($chatId,$message);
+            break;
+        
+        default:
+            $response = "No te he entendido (reply)";
+            sendMessage($chatId,$path,$response,FALSE);
+            break;
+            
+    }
 }
 
-// if(empty($reply)){
+  function getTiempo($chatId,$lugar){
 
-// //Comprueba con el "switch" que ha introducido el usuario
-//     switch($command[0]){
-//         case "Hola":
-//             $response = "Hola que tal?";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
-
-//         case "/tiempo":
-//             $response = "¿De qué municipio quieres consultar?";
-//             sendMessage($chatId,$response,TRUE);
-//             break;
-
-//         default:
-//             $response = "No te he entendido";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
-
-//   }
-// }
-// else {
-//     switch($replya[0]){
-//         case "¿De":
-//             getTiempo($chatId,$message);
-//             break;
-        
-//         default:
-//             $response = "No te he entendido (reply)";
-//             sendMessage($chatId,$response,FALSE);
-//             break;
-            
-//     }
-// }
-
-//   function getTiempo($chatId,$lugar){
-
-//     sendMessage($chatId,$lugar,FALSE);
-//   }
+    sendMessage($chatId,$lugar,FALSE);
+  }
 
  
  
