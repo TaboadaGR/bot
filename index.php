@@ -19,7 +19,7 @@ $replya = explode(" ",$reply);
 
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $message){
+function sendMessage($chatId, $message, $repl){
 
 
     if($repl == TRUE) {
@@ -35,20 +35,20 @@ function sendMessage($chatId, $message){
   if(empty($reply)){
 
 //Comprueba con el "switch" que ha introducido el usuario
-    switch($command[1]){
+    switch($command[0]){
         case "Hola":
             $response = "Hola que tal?";
-            sendMessage($chatId,$response);
+            sendMessage($chatId,$response,TRUE);
             break;
 
         case "/tiempo":
             $response = "¿De qué municipio quieres consultar?";
-            sendMessage($chatId,$response);
+            sendMessage($chatId,$response,TRUE);
             break;
 
         default:
             $response = "No te he entendido";
-            sendMessage($chatId,$response);
+            sendMessage($chatId,$response,FALSE);
             break;
 
   }
