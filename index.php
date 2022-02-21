@@ -2,7 +2,7 @@
 
 /*variables de la conexión del bot de telegrama 
 con la api de telegram*/
-$apikeytelegram="5198652264:AAHjes9nmynBblfzw7TZ4bRYwM_po-aF1Lg";
+$apikeytelegram="5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8";
 $path = "https://api.telegram.org/bot".$apikeytelegram;
 $file = file_get_contents("php://input");
 $update = json_decode($file,TRUE);
