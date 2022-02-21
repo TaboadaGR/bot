@@ -33,7 +33,6 @@ function sendMessage($chatId, $message,$repl){
 }
 
 if(!empty($message)){
-    echo "hola";
     sendMessage($chatId,"Hola",FALSE);
 }
 
