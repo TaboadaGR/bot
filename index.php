@@ -81,9 +81,18 @@ else {
 }
 
   function getTiempo($chatId,$lugar){
-      $tiempo ='https://www.el-tiempo.net/api/json/v2/provincias/';
+      $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
+      $filetiempo = file_get_contents($urlapi,true);
+      $json = json_encode($filetiempo);
+      $arraytiempo = json_decode($json);
+      $provincia;
+      for ($i=0;i<$tamanoarray;i++){
+        if ($arraytiempo[$i]["NOMBRE"]==$lugar){
+            $provincia = $arraytiempo[$i]["CODPROV"];
+        }    
+      } 
       $ubi= $tiempo["CODPROV"];
-    $url = 'https://www.el-tiempo.net/api/json/v2/provincias/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($ubi);
+    $url = 'https://www.el-tiempo.net/api/json/v2/provincias/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($provincia);
     file_get_contents($url);
 
     sendMessage($chatId,$lugar,FALSE);
