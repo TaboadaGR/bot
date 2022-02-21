@@ -96,7 +96,7 @@ else {
     $url = $urlapi.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($provincia);
     file_get_contents($url);
 
-    sendMessage($chatId,$lugar,FALSE);
+    sendMessage($chatId,$provincia,FALSE);
   }
 
  
