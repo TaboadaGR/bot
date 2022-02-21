@@ -71,6 +71,8 @@ else {
 }
 
   function getTiempo($chatId,$lugar){
+    $url = 'https://www.el-tiempo.net/api/json/v2/municipios/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text=[nombre_provincia]'.urlencode($message);
+    file_get_contents($url);
 
     sendMessage($chatId,$lugar,FALSE);
   }
