@@ -16,11 +16,11 @@ $command = explode(" ",$message);
 $reply = $update["message"]["reply_to_message"]["text"];
 $replya = explode(" ",$reply);
 
-echo "hola holita";
+
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
 function sendMessage($chatId, $message,$repl){
-
+    echo "hola holita";
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
