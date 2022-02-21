@@ -86,6 +86,7 @@ else {
       $json = json_encode($filetiempo);
       $arraytiempo = json_decode($json);
       $provincia;
+      $tamanoarray=1000;
       for ($i=0;i<$tamanoarray;i++){
         if ($arraytiempo[$i]["NOMBRE"]==$lugar){
             $provincia = $arraytiempo[$i]["CODPROV"];
