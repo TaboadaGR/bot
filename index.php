@@ -35,7 +35,7 @@ function sendMessage($chatId, $message){
   if(empty($reply)){
 
 //Comprueba con el "switch" que ha introducido el usuario
-    switch($command[0]){
+    switch($command[1]){
         case "Hola":
             $response = "Hola que tal?";
             sendMessage($chatId,$response);
