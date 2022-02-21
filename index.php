@@ -32,46 +32,49 @@ function sendMessage($chatId, $message,$repl){
 
     file_get_contents($url);
 }
-
-if(empty($reply)){
-
-//Comprueba con el "switch" que ha introducido el usuario
-    switch($command[0]){
-        case "Hola":
-            $response = "Hola que tal?";
-            sendMessage($chatId,$response,FALSE);
-            break;
-
-        case "/tiempo":
-            $response = "¿De qué municipio quieres consultar?";
-            sendMessage($chatId,$response,TRUE);
-            break;
-
-        default:
-            $response = "No te he entendido";
-            sendMessage($chatId,$response,FALSE);
-            break;
-
-  }
+if(!empty($message)){
+    sendMessage($chatId,"Hola",FALSE);
 }
-else {
-    switch($replya[0]){
-        case "¿De":
-            getTiempo($chatId,$message);
-            break;
+
+// if(empty($reply)){
+
+// //Comprueba con el "switch" que ha introducido el usuario
+//     switch($command[0]){
+//         case "Hola":
+//             $response = "Hola que tal?";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
+
+//         case "/tiempo":
+//             $response = "¿De qué municipio quieres consultar?";
+//             sendMessage($chatId,$response,TRUE);
+//             break;
+
+//         default:
+//             $response = "No te he entendido";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
+
+//   }
+// }
+// else {
+//     switch($replya[0]){
+//         case "¿De":
+//             getTiempo($chatId,$message);
+//             break;
         
-        default:
-            $response = "No te he entendido (reply)";
-            sendMessage($chatId,$response,FALSE);
-            break;
+//         default:
+//             $response = "No te he entendido (reply)";
+//             sendMessage($chatId,$response,FALSE);
+//             break;
             
-    }
-}
+//     }
+// }
 
-  function getTiempo($chatId,$lugar){
+//   function getTiempo($chatId,$lugar){
 
-    sendMessage($chatId,$lugar,FALSE);
-  }
+//     sendMessage($chatId,$lugar,FALSE);
+//   }
 
  
  
