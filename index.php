@@ -27,10 +27,16 @@ function sendMessage($chatId, $server, $message,$repl){
        file_get_contents($url);
     }
     else{
-        echo "hola holita 3";
+        echo "inicio";
+        echo "/n";
         $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
         file_get_contents($url);
         echo $url;
+        echo "/n";
+        echo $chatId;
+        echo "/n";
+        echo $message;
+        echo "fin";
     }    
 }
 
