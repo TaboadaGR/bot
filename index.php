@@ -26,7 +26,7 @@ function sendMessage($chatId, $message,$repl){
        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     }
     else{
-        echo "hola holita";
+        echo "hola holita 2";
         $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
     }
 
