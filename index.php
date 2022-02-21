@@ -19,22 +19,23 @@ $replya = explode(" ",$reply);
 
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $message,$repl){
+function sendMessage($chatId, $server, $message,$repl){
     
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
-       $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+       $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+       file_get_contents($url);
     }
     else{
-        echo "hola holita 2";
-        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
-    }
-
-    file_get_contents($url);
+        echo "hola holita 3";
+        $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+        file_get_contents($url);
+        echo "hola holita 4";
+    }    
 }
 
 if(empty($message)){
-    sendMessage($chatId,"Hola",FALSE);
+    sendMessage($chatId,$path,"Hola",FALSE);
 }
 
 // if(empty($reply)){
