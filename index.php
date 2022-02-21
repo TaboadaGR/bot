@@ -20,8 +20,8 @@ $replya = explode(" ",$reply);
 de lo que envie al bot.*/ 
 function sendMessage($chatId, $message){
 
-    
-    if($repl == TRUE) {
+
+    if($repl == FALSE) {
        $reply_mark = array('force_reply' => TRUE);
        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     }
