@@ -42,7 +42,7 @@ function sendMessage($chatId, $server, $message,$repl){
     }    
 }
 
-if(empty($message)){
+if(!empty($message)){
     sendMessage($chatId,$path,"Hola",FALSE);
 }
 
