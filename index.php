@@ -19,7 +19,7 @@ $replya = explode(" ",$reply);
 
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $message){
+function sendMessage($chatId, $message, $repl){
 
 
     if($repl == TRUE) {
@@ -32,7 +32,7 @@ function sendMessage($chatId, $message){
     file_get_contents($url);
 }
 
-  if(!empty($reply)){
+  if(empty($reply)){
 
 //Comprueba con el "switch" que ha introducido el usuario
     switch($command[0]){
