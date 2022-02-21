@@ -55,7 +55,7 @@ if(empty($reply)){
             break;    
     
         case "/tiempo":
-            $response = "¿De qué municipio quieres consultar?";
+            $response = "¿De donde lo quieres consultar?";
             sendMessage($chatId,$response,TRUE);
             break;
 
