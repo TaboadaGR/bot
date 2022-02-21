@@ -16,12 +16,14 @@ $command = explode(" ",$message);
 $reply = $update["message"]["reply_to_message"]["text"];
 $replya = explode(" ",$reply);
 
+
+sendMessage($chatId,$message, FALSE)
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $message){
+function sendMessage($chatId, $message, $repl){
 
 
-    if($repl == FALSE) {
+    if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
        $url = $path.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
     }
@@ -32,7 +34,7 @@ function sendMessage($chatId, $message){
 }
 
   if(empty($reply)){
-
+//Comprueba con el "switch" que ha introducido el usuario
     switch($command[0]){
         case "Hola":
             $response = "Hola que tal?";
