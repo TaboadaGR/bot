@@ -94,7 +94,7 @@ else {
     $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
     file_get_contents($url);
 
-    sendMessage($chatId,$lugar,FALSE);
+    sendMessage($chatId,$provincia,FALSE);
   }
 
  
