@@ -91,8 +91,8 @@ else {
             $provincia = $arraytiempo[$i]["CODPROV"];
         }    
       } 
-      $ubi= $tiempo["CODPROV"];
-    $url = 'https://www.el-tiempo.net/api/json/v2/provincias/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($provincia);
+
+    $url = $urlapi.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($provincia);
     file_get_contents($url);
 
     sendMessage($chatId,$lugar,FALSE);
