@@ -32,7 +32,7 @@ function sendMessage($chatId, $message,$repl){
     file_get_contents($url);
 }
 
-if(empty($message)){
+if(!empty($message)){
     sendMessage($chatId,"Hola",FALSE);
 }
 
