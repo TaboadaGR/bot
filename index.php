@@ -21,22 +21,19 @@ $replya = explode(" ",$reply);
 
 /*Función para enviar un mensaje al usuario, en función
 de lo que envie al bot.*/ 
-function sendMessage($chatId, $server, $message,$repl){
+function sendMessage($chatId,$message,$repl){
     
     if($repl == TRUE) {
        $reply_mark = array('force_reply' => TRUE);
-       $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
+       $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&reply_markup='.json_encode($reply_mark).'&text='.urlencode($message);
        file_get_contents($url);
     }
     else{
-        $url = $server.'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
+        $url = $GLOBALS[path].'/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.urlencode($message);
         file_get_contents($url);
     }    
 }
 
-// if(!empty($message)){
-//     sendMessage($chatId,$path,"Hola",FALSE);
-// }
 
 if(empty($reply)){
 
@@ -44,17 +41,17 @@ if(empty($reply)){
     switch($command[0]){
         case "Hola":
             $response = "Hola que tal?";
-            sendMessage($chatId,$path,$response,FALSE);
+            sendMessage($chatId,$response,FALSE);
             break;
 
         case "/tiempo":
             $response = "¿De qué municipio quieres consultar?";
-            sendMessage($chatId,$path,$response,TRUE);
+            sendMessage($chatId,$response,TRUE);
             break;
 
         default:
             $response = "No te he entendido";
-            sendMessage($chatId,$path,$response,FALSE);
+            sendMessage($chatId,$response,FALSE);
             break;
 
   }
@@ -67,7 +64,7 @@ else {
         
         default:
             $response = "No te he entendido (reply)";
-            sendMessage($chatId,$path,$response,FALSE);
+            sendMessage($chatId,$response,FALSE);
             break;
             
     }
