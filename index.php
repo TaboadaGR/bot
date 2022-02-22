@@ -35,18 +35,20 @@ function sendMessage($chatId,$message,$repl){
 }
 
 function getTiempo($chatId,$lugar){
-    $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
+    // $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
+    $urlapi = 'https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather';
+
     $filetiempo = file_get_contents($urlapi,true);
     $json = json_encode($filetiempo);
     $arraytiempo = json_decode($json);
     $provincia = "prueba";
-    for ($i=0;$i<10;$i++){
-        if ($arraytiempo[$i]["NOMBRE"]==$lugar){
-            $provincia = $arraytiempo[$i]["CODPROV"];
-        }    
-    } 
+    // for ($i=0;$i<10;$i++){
+    //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
+    //         $provincia = $arraytiempo[$i]["CODPROV"];
+    //     }    
+    // } 
 //   $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
-    $url = ' https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather';
+    $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$arraytiempo ;
   file_get_contents($url);
 
 }
