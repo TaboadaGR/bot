@@ -40,7 +40,6 @@ function getTiempo($chatId,$lugar){
 
     $filetiempo = file_get_contents($urlapi,true);
     $json = json_encode($filetiempo);
-    echo "Hola" . $json;
     $arraytiempo = json_decode($json);
     $provincia = "Granada" . $arraytiempo['nombre'];
     // for ($i=0;$i<10;$i++){
