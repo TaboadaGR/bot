@@ -39,8 +39,7 @@ function getTiempo($chatId,$lugar){
     $urlapi = 'https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather';
 
     $filetiempo = file_get_contents($urlapi,true);
-    $json = json_encode($filetiempo);
-    $arraytiempo = json_decode($json);
+    $arraytiempo = json_decode($filetiempo);
     $provincia = "Granada" . $arraytiempo['nombre'];
     // for ($i=0;$i<10;$i++){
     //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
