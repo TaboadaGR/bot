@@ -40,15 +40,15 @@ function getTiempo($chatId,$lugar){
 
     $filetiempo = file_get_contents($urlapi,true);
     $json = json_encode($filetiempo);
-    // $arraytiempo = json_decode($json);
-    $provincia = "prueba";
+    $arraytiempo = json_decode($json);
+    $provincia = "Granada";
     // for ($i=0;$i<10;$i++){
     //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
     //         $provincia = $arraytiempo[$i]["CODPROV"];
     //     }    
     // } 
 //   $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
-    $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$json.provincia ;
+    $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia ;
   file_get_contents($url);
 
 }
