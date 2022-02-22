@@ -39,8 +39,8 @@ function getTiempo($chatId,$lugar){
     $filetiempo = file_get_contents($urlapi,true);
     $json = json_encode($filetiempo);
     $arraytiempo = json_decode($json);
-    $provincia;
-    for ($i=0;$i<100;$i++){
+    $provincia = "prueba";
+    for ($i=0;$i<10000;$i++){
         if ($arraytiempo[$i]["NOMBRE"]==$lugar){
             $provincia = $arraytiempo[$i]["CODPROV"];
         }    
