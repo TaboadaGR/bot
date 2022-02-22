@@ -42,7 +42,7 @@ function getTiempo($chatId,$lugar){
     $json = json_encode($filetiempo);
     echo "Hola" . $json;
     $arraytiempo = json_decode($json);
-    $provincia = "Granada";
+    $provincia = "Granada" . $json;
     // for ($i=0;$i<10;$i++){
     //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
     //         $provincia = $arraytiempo[$i]["CODPROV"];
