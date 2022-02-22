@@ -37,7 +37,7 @@ function sendMessage($chatId,$message,$repl){
 
 if(empty($reply)){
 
-//Comprueba con el "switch" que ha introducido el usuario
+    //Comprueba con el "switch" que ha introducido el usuario
     switch($command[0]){
         case "Hola":
             $response = "Hola que tal?";
@@ -64,7 +64,7 @@ if(empty($reply)){
                 sendMessage($chatId,$response,FALSE);
                 break;
 
-  }
+    }
 }
 else {
     switch($replya[0]){
@@ -79,23 +79,7 @@ else {
             
     }
 }
-}
-  function getTiempo($chatId,$lugar){
-      $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
-      $filetiempo = file_get_contents($urlapi,true);
-      $json = json_encode($filetiempo);
-      $arraytiempo = json_decode($json);
-      $provincia;
-      for ($i=0;$i<100;$i++){
-        if ($arraytiempo[$i]["NOMBRE"]==$lugar){
-            $provincia = $arraytiempo[$i]["CODPROV"];
-        }    
-      } 
-    $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia);
-    file_get_contents($url);
-
-  }
-
+ 
  
  
 ?>
