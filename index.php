@@ -42,7 +42,7 @@ function getTiempo($chatId,$lugar){
     $json = json_encode($filetiempo);
     echo "Hola" . $json;
     $arraytiempo = json_decode($json);
-    $provincia = "Granada" . $json;
+    $provincia = "Granada" . $arraytiempo['nombre'];
     // for ($i=0;$i<10;$i++){
     //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
     //         $provincia = $arraytiempo[$i]["CODPROV"];
@@ -50,7 +50,7 @@ function getTiempo($chatId,$lugar){
     // } 
 //   $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
     $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia ;
-  file_get_contents($url);
+    file_get_contents($url);
 
 }
 
