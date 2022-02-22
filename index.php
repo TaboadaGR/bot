@@ -79,7 +79,7 @@ else {
             
     }
 }
-
+}
   function getTiempo($chatId,$lugar){
       $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
       $filetiempo = file_get_contents($urlapi,true);
