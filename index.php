@@ -40,7 +40,7 @@ function getTiempo($chatId,$lugar){
 
     $filetiempo = file_get_contents($urlapi,true);
     $arraytiempo = json_decode($filetiempo);
-    $provincia = "Granada" . $arraytiempo['nombre'];
+    $provincia = "Granada" + $arraytiempo['nombre'];
     // for ($i=0;$i<10;$i++){
     //     if ($arraytiempo[$i]["NOMBRE"]==$lugar){
     //         $provincia = $arraytiempo[$i]["CODPROV"];
