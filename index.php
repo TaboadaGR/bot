@@ -46,7 +46,7 @@ function getTiempo($chatId,$lugar){
         }    
     } 
 //   $url = 'https://api.telegram.org/bot5110291244:AAHQp8hxNsaeySocMoTumAHxEjmxrh9M-v8/sendMessage?chat_id='.$chatId.'&parse_mode=HTML&text='.$provincia;
-    $url = ' https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather'
+    $url = ' https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather';
   file_get_contents($url);
 
 }
