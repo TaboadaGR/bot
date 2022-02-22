@@ -34,11 +34,20 @@ function sendMessage($chatId,$message,$repl){
     }    
 }
 
+function get_content($URL){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $URL);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+}
+
 function getTiempo($chatId,$lugar){
     // $urlapi ='https://www.el-tiempo.net/api/json/v2/provincias/';
     $urlapi = 'https://www.el-tiempo.net/api/json/v1/provincias/18/municipios/18005/weather';
 
-    $filetiempo = file_get_contents($urlapi,true);
+    $filetiempo = get_content($urlapi);
     $arraytiempo = json_decode($filetiempo);
     $provincia = "Granada" + $arraytiempo['nombre'];
     // for ($i=0;$i<10;$i++){
